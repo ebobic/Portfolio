@@ -10,7 +10,7 @@ export function Contact({
 	linkedinUrl?: string
 }) {
 	return (
-		<section id="contact" className="border-b border-neutral-200/60 py-16 dark:border-neutral-800">
+		<section id="contact" className="py-16">
 			<div className="mx-auto max-w-5xl px-4">
 				<h2 className="mb-4 text-center text-2xl font-semibold">Contact</h2>
 				<p className="mx-auto mb-6 max-w-2xl text-center text-neutral-700 dark:text-neutral-300">

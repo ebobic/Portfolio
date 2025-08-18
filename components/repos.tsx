@@ -23,7 +23,7 @@ export function Repos({ username = 'emilbobic', limit = 6 }: { username?: string
 	}, [username, limit])
 
 	return (
-		<section id="projects" className="border-b border-neutral-200/60 py-16 dark:border-neutral-800">
+		 <section id="projects" className="py-16">
 			<div className="mx-auto max-w-5xl px-4">
 				<h2 className="mb-6 text-center text-2xl font-semibold">Projects</h2>
 				<div className="grid gap-4 sm:grid-cols-2">
