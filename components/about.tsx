@@ -15,10 +15,10 @@ export function About() {
 					{/* Text */}
 					<div className="flex-1 space-y-4 text-base md:text-lg lg:text-xl text-neutral-700 dark:text-neutral-300">
 						<p>
-						I'm Emil Bobić, a junior frontend developer focused on building accessible, user-friendly interfaces. 
+						I&apos;m Emil Bobić, a junior frontend developer focused on building accessible, user-friendly interfaces. 
 						</p>
 						<p> 
-						I'm currently sharpening my skills in React, TypeScript, Next.js, and WCAG standards.
+						I&apos;m currently sharpening my skills in React, TypeScript, Next.js, and WCAG standards.
 
 I care about clean design, performance, and developer experience, and I love turning ideas into polished, inclusive web applications.
 						</p>

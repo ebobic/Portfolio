@@ -29,8 +29,8 @@ export function Repos({ username = 'emilbobic', limit = 6 }: { username?: string
 				<div className="grid gap-4 sm:grid-cols-2">
 					{(repos ?? Array.from({ length: limit })).map((repo, i) => (
 						<motion.a
-							key={(repo as any)?.id ?? i}
-							href={(repo as any)?.html_url ?? '#'}
+							key={(repo as Repo)?.id ?? i}
+							href={(repo as Repo)?.html_url ?? '#'}
 							target="_blank"
 							rel="noopener noreferrer"
 							initial={{ opacity: 0, y: 8 }}
@@ -38,8 +38,8 @@ export function Repos({ username = 'emilbobic', limit = 6 }: { username?: string
 							transition={{ delay: i * 0.05 }}
 							className="rounded-lg border border-neutral-200 p-4 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
 						>
-							<p className="font-medium">{(repo as any)?.name ?? 'Loading…'}</p>
-							<p className="line-clamp-2 text-sm text-neutral-600 dark:text-neutral-400">{(repo as any)?.description ?? 'Fetching repository details…'}</p>
+							<p className="font-medium">{(repo as Repo)?.name ?? 'Loading…'}</p>
+							<p className="line-clamp-2 text-sm text-neutral-600 dark:text-neutral-400">{(repo as Repo)?.description ?? 'Fetching repository details…'}</p>
 						</motion.a>
 					))}
 				</div>

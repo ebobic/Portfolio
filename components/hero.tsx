@@ -18,7 +18,7 @@ export function Hero() {
       transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.4 }}
       className="font-light"
    >
-      Hi, I'm{' '}
+      Hi, I&apos;m{' '}
    </motion.span> 
    <motion.span 
       initial={{ opacity: 0, x: 50, rotateY: 15, scale: 0.8 }}
@@ -53,7 +53,7 @@ export function Hero() {
         }}
         whileTap={{ scale: 0.95 }}
     >
-        Let's Connect
+        Let&apos;s Connect
     </motion.a>
 </motion.div>
 <motion.div
