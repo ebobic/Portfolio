@@ -12,7 +12,7 @@ export function Hero() {
 					transition={{ duration: 0.5, ease: 'easeOut' }}
 					className="mb-3 text-3xl md:text-5xl lg:text-6xl font-normal tracking-tight"
 			>
-   <span className="font-light">Hi, I'm</span> <span className="font-bold">Emil Bobić</span>
+   <span className="font-light">Hi, I'm</span> <span className="font-bold bg-gradient-to-r from-cyan-300 to-cyan-500 bg-clip-text text-transparent">Emil Bobić</span>
 				</motion.h1>
 				<motion.p
 					initial={{ opacity: 0 }}
@@ -28,7 +28,7 @@ export function Hero() {
 					transition={{ delay: 0.15, duration: 0.4 }}
 					className="flex items-center justify-center md:justify-start gap-3"
 				>
-    <a href="#contact" className="rounded-md bg-black px-4 md:px-6 py-2 md:py-3 text-base md:text-lg text-white dark:bg-white dark:text-black">
+    <a href="#contact" className="rounded-full bg-black px-4 md:px-6 py-2 md:py-3 text-base md:text-lg text-white dark:bg-white dark:text-black">
         Let's Connect
     </a>
 </motion.div>
