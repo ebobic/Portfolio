@@ -2,8 +2,8 @@ import { Github, Linkedin, Mail } from 'lucide-react'
 
 export function Contact({
 	email = 'emil.bobic@gmail.com',
-	githubUrl = 'https://github.com/emilbobic',
-	linkedinUrl = '#',
+	githubUrl = 'https://github.com/ebobic',
+	linkedinUrl = 'https://www.linkedin.com/in/emil-bobi%C4%87-35a00a2a1/',
 }: {
 	email?: string
 	githubUrl?: string
@@ -14,7 +14,7 @@ export function Contact({
 			<div className="mx-auto max-w-5xl px-4">
 				<h2 className="mb-4 text-center text-2xl font-semibold">Contact</h2>
 				<p className="mx-auto mb-6 max-w-2xl text-center text-neutral-700 dark:text-neutral-300">
-					I7d love to connect. Feel free to reach out or follow my work.
+					I'd love to connect. Feel free to reach out or follow my work.
 				</p>
 				<div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
 					<a
