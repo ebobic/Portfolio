@@ -10,13 +10,13 @@ export function Contact({
 	linkedinUrl?: string
 }) {
 	return (
-		<section id="contact" className="py-16">
-			<div className="mx-auto max-w-5xl px-4">
-				<h2 className="mb-4 text-center text-2xl font-semibold">Contact</h2>
+		<section id="contact" className="py-12 md:py-16">
+			<div className="mx-auto max-w-5xl px-4 md:px-8">
+				<h2 className="mb-4 text-center text-xl md:text-2xl font-semibold">Contact</h2>
 				<p className="mx-auto mb-6 max-w-2xl text-center text-neutral-700 dark:text-neutral-300">
 					I'd love to connect. Feel free to reach out or follow my work.
 				</p>
-				<div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+				<div className="flex flex-col items-center justify-center gap-3 md:flex-row">
 					<a
 						href={`mailto:${email}`}
 						className="inline-flex items-center gap-2 rounded-md bg-black px-4 py-2 text-white dark:bg-white dark:text-black"

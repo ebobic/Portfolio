@@ -10,13 +10,24 @@ export default function Page() {
 	const [activeSection, setActiveSection] = useState('hero')
 
 	return (
-		<main>
+		<div className="min-h-screen flex flex-col">
 			<Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
-			{activeSection === 'hero' && <Hero />}
-			{activeSection === 'projects' && <Repos />}
-			{activeSection === 'about' && <About />}
-			{activeSection === 'contact' && <Contact />}
-			<footer className="py-10 text-center text-sm text-neutral-500">© 2025 Emil Bobic</footer>
-		</main>
+			<main className="flex-1">
+				{activeSection === 'hero' && <Hero />}
+				{activeSection === 'projects' && <Repos />}
+				{activeSection === 'about' && <About />}
+				{activeSection === 'contact' && <Contact />}
+			</main>
+			<footer className="py-10 text-center text-sm text-neutral-500">
+				<div className="flex items-center justify-center gap-2 mb-2">
+					<span>© 2025 Emil Bobic</span>
+					<span>•</span>
+					<span className="flex items-center gap-1">
+						Made with ❤️ and a whole lot of ☕
+					</span>
+				</div>
+
+			</footer>
+		</div>
 	)
 }

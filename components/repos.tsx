@@ -23,9 +23,9 @@ export function Repos({ username = 'emilbobic', limit = 6 }: { username?: string
 	}, [username, limit])
 
 	return (
-		 <section id="projects" className="py-16">
-			<div className="mx-auto max-w-5xl px-4">
-				<h2 className="mb-6 text-center text-2xl font-semibold">Projects</h2>
+		 		<section id="projects" className="py-12 md:py-16">
+			<div className="mx-auto max-w-5xl px-4 md:px-8">
+				<h2 className="mb-6 text-center text-xl md:text-2xl font-semibold">Projects</h2>
 				<div className="grid gap-4 sm:grid-cols-2">
 					{(repos ?? Array.from({ length: limit })).map((repo, i) => (
 						<motion.a
