@@ -21,28 +21,28 @@ export function Navbar({
 			<div className="flex max-w-5xl items-center justify-between px-4 md:px-8 py-3 ml-auto mr-auto">
 				{/* Desktop Navigation */}
 				<div className="hidden md:flex items-center gap-8">
-					<button onClick={() => setActiveSection('hero')} className="text-[1.25rem] text-neutral-300 hover:opacity-80 hover:text-white hover:scale-105 cursor-pointer transition-all duration-200 px-8 py-5 relative group">
+					<button onClick={() => setActiveSection('hero')} className="text-[1.25rem] text-neutral-300 hover:opacity-80 hover:text-cyan-300 hover:scale-105 cursor-pointer transition-all duration-200 px-8 py-5 relative group">
 						<span className="relative">
 							Home
-							<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></span>
+							<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-300 transition-all duration-200 group-hover:w-full"></span>
 						</span>
 					</button>
-					<button onClick={() => setActiveSection('about')} className="text-[1.25rem] text-neutral-300 hover:opacity-80 hover:text-white hover:scale-105 cursor-pointer transition-all duration-200 px-8 py-5 relative group">
+					<button onClick={() => setActiveSection('about')} className="text-[1.25rem] text-neutral-300 hover:opacity-80 hover:text-cyan-300 hover:scale-105 cursor-pointer transition-all duration-200 px-8 py-5 relative group">
 						<span className="relative">
 							About
-							<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></span>
+							<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-300 transition-all duration-200 group-hover:w-full"></span>
 						</span>
 					</button>
-					<button onClick={() => setActiveSection('projects')} className="text-[1.25rem] text-neutral-300 hover:opacity-80 hover:text-white hover:scale-105 cursor-pointer transition-all duration-200 px-8 py-5 relative group">
+					<button onClick={() => setActiveSection('projects')} className="text-[1.25rem] text-neutral-300 hover:opacity-80 hover:text-cyan-300 hover:scale-105 cursor-pointer transition-all duration-200 px-8 py-5 relative group">
 						<span className="relative">
 							Projects
-							<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></span>
+							<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-300 transition-all duration-200 group-hover:w-full"></span>
 						</span>
 					</button>
-					<button onClick={() => setActiveSection('contact')} className="text-[1.25rem] text-neutral-300 hover:opacity-80 hover:text-white hover:scale-105 cursor-pointer transition-all duration-200 px-8 py-5 relative group">
+					<button onClick={() => setActiveSection('contact')} className="text-[1.25rem] text-neutral-300 hover:opacity-80 hover:text-cyan-300 hover:scale-105 cursor-pointer transition-all duration-200 px-8 py-5 relative group">
 						<span className="relative">
 							Contact
-							<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></span>
+							<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-300 transition-all duration-200 group-hover:w-full"></span>
 						</span>
 					</button>
 				</div>
@@ -73,25 +73,25 @@ export function Navbar({
 					<div className="px-4 py-2 space-y-2">
 						<button 
 							onClick={() => { setActiveSection('hero'); setIsMenuOpen(false); }} 
-							className="block w-full text-left py-3 px-4 text-lg text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-white cursor-pointer transition-all duration-200 rounded-md"
+							className="block w-full text-left py-3 px-4 text-lg text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-cyan-300 cursor-pointer transition-all duration-200 rounded-md"
 						>
 							Home
 						</button>
 						<button 
 							onClick={() => { setActiveSection('about'); setIsMenuOpen(false); }} 
-							className="block w-full text-left py-3 px-4 text-lg text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-white cursor-pointer transition-all duration-200 rounded-md"
+							className="block w-full text-left py-3 px-4 text-lg text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-cyan-300 cursor-pointer transition-all duration-200 rounded-md"
 						>
 							About
 						</button>
 						<button 
 							onClick={() => { setActiveSection('projects'); setIsMenuOpen(false); }} 
-							className="block w-full text-left py-3 px-4 text-lg text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-white cursor-pointer transition-all duration-200 rounded-md"
+							className="block w-full text-left py-3 px-4 text-lg text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-transparent hover:bg-gradient-to-r hover:from-cyan-300 hover:to-cyan-500 hover:bg-clip-text cursor-pointer transition-all duration-200 rounded-md"
 						>
 							Projects
 						</button>
 						<button 
 							onClick={() => { setActiveSection('contact'); setIsMenuOpen(false); }} 
-							className="block w-full text-left py-3 px-4 text-lg text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-white cursor-pointer transition-all duration-200 rounded-md"
+							className="block w-full text-left py-3 px-4 text-lg text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-cyan-400 cursor-pointer transition-all duration-200 rounded-md"
 						>
 							Contact
 						</button>
