@@ -35,7 +35,7 @@ export function Hero() {
 					transition={{ delay: 0.9, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
 					className="mx-auto mb-8 max-w-3xl text-lg md:text-xl lg:text-3xl text-neutral-600 dark:text-neutral-400"
 				>
-					Frontend developer in the making, with a QA background and a passion for learning and creating. Excited to grow as a developer, contribute to meaningful projects, and craft digital experiences that make an impact.
+					Frontend developer in the making, with a background in QA and a passion for learning and creating. Excited to grow as a developer, contribute to meaningful projects, and craft digital experiences that make an impact.
 				</motion.p>
 				<motion.div
 					initial={{ opacity: 0, y: 20, scale: 0.9 }}

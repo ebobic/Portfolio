@@ -16,7 +16,7 @@ export function Navbar({
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
 	const toggle = () => setTheme(theme === 'dark' ? 'light' : 'dark')
 
-	 return (
+	return (
 		<nav className="sticky top-0 z-50 w-full bg-white dark:bg-[#1a1a2e]">
 			<div className="flex max-w-5xl items-center justify-between px-4 md:px-8 py-3 ml-auto mr-auto">
 				{/* Desktop Navigation */}
@@ -102,5 +102,5 @@ export function Navbar({
 				</div>
 			)}
 		</nav>
-	 )
-	}
+	)
+}
