@@ -61,12 +61,12 @@ export default function Page() {
 					)}
 				</AnimatePresence>
 			</main>
-			<footer className="py-10 text-center text-sm text-neutral-500">
+			<footer className="mt-auto py-16 text-center text-sm text-neutral-500">
 				<div className="flex items-center justify-center gap-2 mb-2">
-					<span>© 2025 Emil Bobic</span>
-					<span>•</span>
+				
+					<span></span>
 					<span className="flex items-center gap-1">
-						Made with ❤️ and a whole lot of ☕
+						Made with ❤️ By Emil
 					</span>
 				</div>
 
