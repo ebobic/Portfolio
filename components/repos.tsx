@@ -39,7 +39,7 @@ export function Repos({ username = 'emilbobic', limit = 6 }: { username?: string
 							className="rounded-lg border border-neutral-200 p-4 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
 						>
 							<p className="font-medium">{(repo as Repo)?.name ?? 'Loading…'}</p>
-							<p className="line-clamp-2 text-sm text-neutral-600 dark:text-neutral-400">{(repo as Repo)?.description ?? 'Fetching repository details…'}</p>
+							<p className="line-clamp-2 text-sm text-black dark:text-neutral-400">{(repo as Repo)?.description ?? 'Fetching repository details…'}</p>
 						</motion.a>
 					))}
 				</div>

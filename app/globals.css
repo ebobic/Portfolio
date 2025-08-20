@@ -19,21 +19,56 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Geist Sans', 'Inter', 'Open Sans', sans-serif;
   position: relative;
+  overflow-x: hidden;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(ellipse at top, rgba(6, 182, 212, 0.05) 0%, rgba(6, 182, 212, 0.02) 25%, rgba(6, 182, 212, 0.01) 50%, transparent 70%);
-  pointer-events: none;
-  z-index: -1;
+
+
+/* Smooth scroll animations */
+.section-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Performance optimized scroll animations */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .scroll-reveal-delay-1 {
+    transition-delay: 0.1s;
+  }
+  
+  .scroll-reveal-delay-2 {
+    transition-delay: 0.2s;
+  }
+  
+  .scroll-reveal-delay-3 {
+    transition-delay: 0.3s;
+  }
 }

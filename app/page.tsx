@@ -1,6 +1,5 @@
 'use client'
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect } from 'react'
 import { Navbar } from '@/components/navbar'
 import { Hero } from '@/components/hero'
 import { Repos } from '@/components/repos'
@@ -8,63 +7,58 @@ import { About } from '@/components/about'
 import { Contact } from '@/components/contact'
 
 export default function Page() {
-	const [activeSection, setActiveSection] = useState('hero')
+	useEffect(() => {
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: '0px 0px -50px 0px'
+		}
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible')
+				}
+			})
+		}, observerOptions)
+
+		const sections = document.querySelectorAll('.section-fade-in')
+		sections.forEach((section) => {
+			observer.observe(section)
+		})
+
+		return () => {
+			sections.forEach((section) => {
+				observer.unobserve(section)
+			})
+		}
+	}, [])
 
 	return (
-		<div className="min-h-screen flex flex-col">
-			<Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
-			<main className="flex-1">
-				<AnimatePresence mode="wait">
-					{activeSection === 'hero' && (
-						<motion.div
-							key="hero"
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							exit={{ opacity: 0, y: -20 }}
-							transition={{ duration: 0.5, ease: "easeInOut" }}
-						>
-							<Hero />
-						</motion.div>
-					)}
-					{activeSection === 'projects' && (
-						<motion.div
-							key="projects"
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							exit={{ opacity: 0, y: -20 }}
-							transition={{ duration: 0.5, ease: "easeInOut" }}
-						>
-							<Repos />
-						</motion.div>
-					)}
-					{activeSection === 'about' && (
-						<motion.div
-							key="about"
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							exit={{ opacity: 0, y: -20 }}
-							transition={{ duration: 0.5, ease: "easeInOut" }}
-						>
-							<About />
-						</motion.div>
-					)}
-					{activeSection === 'contact' && (
-						<motion.div
-							key="contact"
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							exit={{ opacity: 0, y: -20 }}
-							transition={{ duration: 0.5, ease: "easeInOut" }}
-						>
-							<Contact />
-						</motion.div>
-					)}
-				</AnimatePresence>
+		<div className="min-h-screen">
+			<Navbar />
+			<main className="flex flex-col">
+				{/* Hero Section */}
+				<section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden section-fade-in visible">
+					<Hero />
+				</section>
+
+				{/* About Section */}
+				<section id="about" className="min-h-screen flex items-center justify-center relative overflow-hidden section-fade-in">
+					<About />
+				</section>
+
+				{/* Projects Section */}
+				<section id="projects" className="min-h-screen flex items-center justify-center relative overflow-hidden section-fade-in">
+					<Repos />
+				</section>
+
+				{/* Contact Section */}
+				<section id="contact" className="min-h-screen flex items-center justify-center relative overflow-hidden section-fade-in">
+					<Contact />
+				</section>
 			</main>
-			<footer className="mt-auto py-16 text-center text-sm text-neutral-500">
+			<footer className="py-16 text-center text-sm text-black dark:text-neutral-500">
 				<div className="flex items-center justify-center gap-2 mb-2">
-				
-					<span></span>
 					<span className="flex items-center gap-1">
 						Made with 
 						<svg className="w-4 h-4 text-cyan-400" viewBox="0 0 24 24" fill="currentColor">
@@ -73,7 +67,6 @@ export default function Page() {
 						By Emil
 					</span>
 				</div>
-
 			</footer>
 		</div>
 	)

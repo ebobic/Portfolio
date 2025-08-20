@@ -33,9 +33,9 @@ export function Hero() {
 					initial={{ opacity: 0, y: 25, scale: 0.95 }}
 					animate={{ opacity: 1, y: 0, scale: 1 }}
 					transition={{ delay: 0.9, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-					className="mx-auto mb-8 max-w-3xl text-lg md:text-xl lg:text-3xl text-neutral-600 dark:text-neutral-400"
+					className="mx-auto mb-8 max-w-3xl text-lg md:text-xl lg:text-3xl text-black dark:text-neutral-400"
 				>
-					Frontend developer in the making, with a background in QA and a passion for learning and creating. Excited to grow as a developer, contribute to meaningful projects, and craft digital experiences that make an impact.
+					Frontend developer in the making, with a background in QA and a passion for learning and creating.
 				</motion.p>
 				<motion.div
 					initial={{ opacity: 0, y: 20, scale: 0.9 }}
@@ -66,7 +66,7 @@ export function Hero() {
           href="https://github.com/ebobic" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="text-neutral-600 hover:text-cyan-400 dark:text-neutral-400 dark:hover:text-cyan-400 transition-all duration-300"
+          className="text-black hover:text-cyan-600 dark:text-neutral-400 dark:hover:text-cyan-400 transition-all duration-300"
           whileHover={{ 
               scale: 1.2, 
               rotate: 5,
@@ -82,7 +82,7 @@ export function Hero() {
           href="https://www.linkedin.com/in/emil-bobić-35a00a2a1/" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="text-neutral-600 hover:text-cyan-400 dark:text-neutral-400 dark:hover:text-cyan-400 transition-all duration-300"
+          className="text-black hover:text-cyan-600 dark:text-neutral-400 dark:hover:text-cyan-400 transition-all duration-300"
           whileHover={{ 
               scale: 1.2, 
               rotate: 5,
@@ -96,7 +96,7 @@ export function Hero() {
     </motion.a>
 	<motion.a 
         href="mailto:ebobic95@gmail.com" 
-        className="text-neutral-600 hover:text-cyan-400 dark:text-neutral-400 dark:hover:text-cyan-400 transition-all duration-300"
+        className="text-black hover:text-cyan-600 dark:text-neutral-400 dark:hover:text-cyan-400 transition-all duration-300"
         whileHover={{ 
             scale: 1.2, 
             rotate: 5,
