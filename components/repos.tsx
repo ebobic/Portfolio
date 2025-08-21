@@ -23,9 +23,9 @@ export function Repos({ username = 'emilbobic', limit = 6 }: { username?: string
 	}, [username, limit])
 
 	return (
-		 		<section id="projects" className="py-12 md:py-16">
-			<div className="mx-auto max-w-5xl px-4 md:px-8">
-				<h2 className="mb-6 text-center text-xl md:text-2xl font-semibold">Projects</h2>
+		<section id="projects" className="py-12 md:py-16">
+			<div className="mx-auto max-w-2xl px-4 md:px-8">
+				<h2 className="mb-6 text-center text-xl md:text-2xl font-semibold text-black dark:text-neutral-100">Projects</h2>
 				<div className="grid gap-4 sm:grid-cols-2">
 					{(repos ?? Array.from({ length: limit })).map((repo, i) => (
 						<motion.a
@@ -38,7 +38,7 @@ export function Repos({ username = 'emilbobic', limit = 6 }: { username?: string
 							transition={{ delay: i * 0.05 }}
 							className="rounded-lg border border-neutral-200 p-4 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
 						>
-							<p className="font-medium">{(repo as Repo)?.name ?? 'Loading…'}</p>
+							<p className="font-medium text-black dark:text-neutral-200">{(repo as Repo)?.name ?? 'Loading…'}</p>
 							<p className="line-clamp-2 text-sm text-black dark:text-neutral-400">{(repo as Repo)?.description ?? 'Fetching repository details…'}</p>
 						</motion.a>
 					))}

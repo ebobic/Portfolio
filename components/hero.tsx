@@ -5,68 +5,87 @@ import { motion } from 'framer-motion'
 export function Hero() {
 	return (
 		<section className="relative flex min-h-[70vh] items-center justify-center">
-			<div className="mx-auto max-w-5xl px-4 md:px-8 py-12 md:py-20 text-left">
+			<div className="mx-auto max-w-2xl px-4 md:px-8 text-center">
+				{/* Photo */}
+				<motion.div 
+					className="mb-6 flex justify-center"
+					initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+					animate={{ opacity: 1, scale: 1, rotate: 0 }}
+					transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
+				>
+					<div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-xl bg-cyan-400">
+						<div className="w-full h-full transform scale-130 translate-x-2">
+							<img 
+								src="/emilfull-removebg-preview.png" 
+								alt="Emil Bobić" 
+								className="w-full h-full object-cover object-top"
+								style={{ 
+									objectPosition: '90% 5%',
+									filter: 'contrast(1.05) brightness(1.02) saturate(0.9) hue-rotate(-5deg)'
+								}}
+							/>
+						</div>
+					</div>
+				</motion.div>
+
+				{/* Main Heading */}
 				<motion.h1
 					initial={{ opacity: 0, y: 30, scale: 0.9 }}
 					animate={{ opacity: 1, y: 0, scale: 1 }}
-					transition={{ duration: 1.0, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
-					className="mb-4 text-4xl md:text-6xl lg:text-8xl font-normal tracking-tight"
-			>
-   <motion.span 
-      initial={{ opacity: 0, x: -50, rotateY: -15 }}
-      animate={{ opacity: 1, x: 0, rotateY: 0 }}
-      transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.4 }}
-      className="font-light"
+					transition={{ duration: 1.0, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.4 }}
+					className="mb-6 text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black"
    >
       Hi, I&apos;m{' '}
-   </motion.span> 
-   <motion.span 
-      initial={{ opacity: 0, x: 50, rotateY: 15, scale: 0.8 }}
-      animate={{ opacity: 1, x: 0, rotateY: 0, scale: 1 }}
-      transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.6 }}
-      className="font-bold bg-gradient-to-r from-cyan-300 to-cyan-500 bg-clip-text text-transparent"
-   >
-      Emil Bobić
-   </motion.span>
+					<span className="text-black">
+						Emil Bobić
+					</span>
 				</motion.h1>
+
+				{/* Subtitle */}
 				<motion.p
 					initial={{ opacity: 0, y: 25, scale: 0.95 }}
 					animate={{ opacity: 1, y: 0, scale: 1 }}
-					transition={{ delay: 0.9, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-					className="mx-auto mb-8 max-w-3xl text-lg md:text-xl lg:text-3xl text-black dark:text-neutral-400"
+					transition={{ delay: 0.6, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+					className="mb-6 text-xl md:text-2xl lg:text-3xl text-black font-medium"
 				>
-					Frontend developer in the making, with a background in QA and a passion for learning and creating.
+					Frontend Developer & QA Engineer.
 				</motion.p>
+
+
+
+				{/* CTA Button */}
 				<motion.div
 					initial={{ opacity: 0, y: 20, scale: 0.9 }}
 					animate={{ opacity: 1, y: 0, scale: 1 }}
-					transition={{ delay: 1.1, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-					className="flex items-center justify-center gap-3"
+					transition={{ delay: 1.0, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+					className="mb-6"
 				>
     <motion.a 
         href="#contact" 
-        className="rounded-full bg-black hover:bg-cyan-600 dark:bg-white dark:hover:bg-cyan-400 px-6 md:px-8 py-3 md:py-4 text-lg md:text-xl lg:text-2xl text-white dark:text-black transition-all duration-300"
+						className="inline-block rounded-full bg-white hover:bg-cyan-400 px-8 py-4 text-lg font-medium text-black transition-all duration-300 border-2 border-neutral-300/50 shadow-lg hover:shadow-xl"
         whileHover={{ 
             scale: 1.05, 
-            boxShadow: "0 10px 25px rgba(0, 0, 0, 0.2)",
+            boxShadow: "0 15px 35px rgba(0, 0, 0, 0.3)",
             transition: { duration: 0.2 }
         }}
         whileTap={{ scale: 0.95 }}
     >
-        Let&apos;s Connect
+        Let&apos;s have a chat!
     </motion.a>
 </motion.div>
+
+				{/* Social Links */}
 <motion.div
     initial={{ opacity: 0, y: 20, scale: 0.9 }}
     animate={{ opacity: 1, y: 0, scale: 1 }}
-    transition={{ delay: 1.3, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-    className="flex items-center justify-center gap-3 md:gap-4 mt-4"
+					transition={{ delay: 1.2, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+					className="flex items-center justify-center gap-6"
 >
           <motion.a 
           href="https://github.com/ebobic" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="text-black hover:text-cyan-600 dark:text-neutral-400 dark:hover:text-cyan-400 transition-all duration-300"
+						className="text-black hover:text-cyan-400 transition-all duration-300"
           whileHover={{ 
               scale: 1.2, 
               rotate: 5,
@@ -82,7 +101,7 @@ export function Hero() {
           href="https://www.linkedin.com/in/emil-bobić-35a00a2a1/" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="text-black hover:text-cyan-600 dark:text-neutral-400 dark:hover:text-cyan-400 transition-all duration-300"
+						className="text-black hover:text-cyan-400 transition-all duration-300"
           whileHover={{ 
               scale: 1.2, 
               rotate: 5,
@@ -96,7 +115,7 @@ export function Hero() {
     </motion.a>
 	<motion.a 
         href="mailto:ebobic95@gmail.com" 
-        className="text-black hover:text-cyan-600 dark:text-neutral-400 dark:hover:text-cyan-400 transition-all duration-300"
+						className="text-black hover:text-cyan-400 transition-all duration-300"
         whileHover={{ 
             scale: 1.2, 
             rotate: 5,
@@ -109,7 +128,6 @@ export function Hero() {
     </svg>
 </motion.a>
 </motion.div>
-
 			</div>
 		</section>
 	)
