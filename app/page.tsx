@@ -1,12 +1,16 @@
 'use client'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 import { Navbar } from '@/components/navbar'
 import { Hero } from '@/components/hero'
 import { Repos } from '@/components/repos'
 import { About } from '@/components/about'
 import { Contact } from '@/components/contact'
+import Link from 'next/link'
 
 export default function Page() {
+	const [currentSection, setCurrentSection] = useState('hero')
+
 	useEffect(() => {
 		const observerOptions = {
 			threshold: 0.1,
@@ -33,41 +37,129 @@ export default function Page() {
 		}
 	}, [])
 
+	// Listen for section change events from navbar
+	useEffect(() => {
+		const handleSectionChange = (event: CustomEvent) => {
+			setCurrentSection(event.detail.section)
+		}
+
+		window.addEventListener('sectionChange', handleSectionChange as EventListener)
+		return () => {
+			window.removeEventListener('sectionChange', handleSectionChange as EventListener)
+		}
+	}, [])
+
+	// Animation variants
+	const revealAnimation = {
+		hidden: { 
+			opacity: 0, 
+			y: 50,
+			scale: 0.95
+		},
+		visible: { 
+			opacity: 1, 
+			y: 0,
+			scale: 1,
+			transition: {
+				duration: 0.8
+			}
+		}
+	}
+
+	const scrollToSection = (sectionId: string) => {
+		const section = document.getElementById(sectionId);
+		if (section) {
+			section.scrollIntoView({ behavior: 'smooth' });
+		}
+	};
+
 	return (
-		<div className="min-h-screen">
-			<Navbar />
-			<main className="flex flex-col">
-				{/* Hero Section */}
-				<section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden section-fade-in visible">
-					<Hero />
-				</section>
+		<div className="min-h-screen w-full bg-[#f8fafc] relative">
+			{/* Grid Background - covers entire viewport */}
+			<div
+				className="fixed inset-0 z-0"
+				style={{
+					backgroundImage: `
+						linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+						linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)
+					`,
+					backgroundSize: "20px 30px",
+					backgroundPosition: "0 0", // Start from very top
+					WebkitMaskImage:
+						"linear-gradient(to bottom, #000 0%, transparent 50%)",
+					maskImage:
+						"linear-gradient(to bottom, #000 0%, transparent 50%)",
+				}}
+			/>
+			
+			{/* Your Content/Components */}
+			<div className="relative z-10">
+				<Navbar />
+				
+				{/* Desktop Layout - Scrollable Sections */}
+				<div className="hidden md:block max-w-6xl mx-auto bg-transparent">
+					{/* Hero Section */}
+					<section id="hero" className="min-h-screen flex items-center justify-center relative section-fade-in visible pt-10 md:pt-0 md:mt-10">
+						<Hero />
+					</section>
 
-				{/* About Section */}
-				<section id="about" className="min-h-screen flex items-center justify-center relative overflow-hidden section-fade-in">
-					<About />
-				</section>
+					{/* About Section */}
+					<motion.section 
+						id="about" 
+						className="min-h-screen flex items-center justify-center relative section-fade-in py-2"
+						variants={revealAnimation}
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, margin: "-100px" }}
+					>
+						<About />
+					</motion.section>
 
-				{/* Projects Section */}
-				<section id="projects" className="min-h-screen flex items-center justify-center relative overflow-hidden section-fade-in">
-					<Repos />
-				</section>
-
-				{/* Contact Section */}
-				<section id="contact" className="min-h-screen flex items-center justify-center relative overflow-hidden section-fade-in">
-					<Contact />
-				</section>
-			</main>
-			<footer className="py-16 text-center text-sm text-black dark:text-neutral-500">
-				<div className="flex items-center justify-center gap-2 mb-2">
-					<span className="flex items-center gap-1">
-						Made with 
-						<svg className="w-4 h-4 text-cyan-400" viewBox="0 0 24 24" fill="currentColor">
-							<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-						</svg>
-						By Emil
-					</span>
+					{/* Contact Section */}
+					<motion.section 
+						id="contact" 
+						className="min-h-screen flex items-center justify-center relative section-fade-in py-2"
+						variants={revealAnimation}
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, margin: "-100px" }}
+					>
+						<Contact />
+					</motion.section>
 				</div>
-			</footer>
+
+				{/* Mobile Layout - Scrollable Sections */}
+				<div className="md:hidden max-w-6xl mx-auto bg-transparent">
+					{/* Hero Section */}
+					<section id="hero" className="min-h-screen flex items-center justify-center relative section-fade-in visible pt-20">
+						<Hero />
+					</section>
+
+					{/* About Section */}
+					<motion.section 
+						id="about" 
+						className="min-h-screen flex items-center justify-center relative section-fade-in -mt-20"
+						variants={revealAnimation}
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, margin: "-100px" }}
+					>
+						<About />
+					</motion.section>
+
+					{/* Contact Section */}
+					<motion.section 
+						id="contact" 
+						className="min-h-screen flex items-center justify-center relative section-fade-in -mt-20"
+						variants={revealAnimation}
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, margin: "-100px" }}
+					>
+						<Contact />
+					</motion.section>
+				</div>
+			</div>
 		</div>
 	)
 }
