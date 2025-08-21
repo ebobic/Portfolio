@@ -4,12 +4,6 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 export function Footer() {
-	const scrollToSection = (sectionId: string) => {
-		const section = document.getElementById(sectionId);
-		if (section) {
-			section.scrollIntoView({ behavior: 'smooth' });
-		}
-	};
 
 	const revealAnimation = {
 		hidden: { 

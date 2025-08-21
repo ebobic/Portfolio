@@ -1,15 +1,12 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Navbar } from '@/components/navbar'
 import { Hero } from '@/components/hero'
-import { Repos } from '@/components/repos'
 import { About } from '@/components/about'
 import { Contact } from '@/components/contact'
-import Link from 'next/link'
 
 export default function Page() {
-	const [currentSection, setCurrentSection] = useState('hero')
 
 	useEffect(() => {
 		const observerOptions = {
@@ -37,17 +34,7 @@ export default function Page() {
 		}
 	}, [])
 
-	// Listen for section change events from navbar
-	useEffect(() => {
-		const handleSectionChange = (event: CustomEvent) => {
-			setCurrentSection(event.detail.section)
-		}
 
-		window.addEventListener('sectionChange', handleSectionChange as EventListener)
-		return () => {
-			window.removeEventListener('sectionChange', handleSectionChange as EventListener)
-		}
-	}, [])
 
 	// Animation variants
 	const revealAnimation = {
@@ -66,12 +53,7 @@ export default function Page() {
 		}
 	}
 
-	const scrollToSection = (sectionId: string) => {
-		const section = document.getElementById(sectionId);
-		if (section) {
-			section.scrollIntoView({ behavior: 'smooth' });
-		}
-	};
+
 
 	return (
 		<div className="min-h-screen w-full bg-[#f8fafc] relative">

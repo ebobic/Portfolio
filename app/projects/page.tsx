@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 
 export default function ProjectsPage() {
 	return (
@@ -28,15 +29,15 @@ export default function ProjectsPage() {
 							<div className="bg-white/90 backdrop-blur-2xl border border-neutral-300/30 rounded-2xl shadow-2xl shadow-black/10 px-6 py-8">
 								<h1 className="mb-4 text-center text-3xl md:text-4xl font-bold text-black">Projects</h1>
 								<p className="mx-auto mb-8 max-w-2xl text-center text-black">
-									Coming soon! I'm working on some exciting projects that I'll be sharing here.
+									Coming soon! I&apos;m working on some exciting projects that I&apos;ll be sharing here.
 								</p>
 								<div className="text-center">
-									<a
+									<Link
 										href="/"
 										className="inline-flex items-center gap-2 rounded-lg bg-black px-6 py-3 text-white hover:bg-neutral-800 transition-all duration-200 shadow-lg hover:shadow-xl"
 									>
 										Back to Home
-									</a>
+									</Link>
 								</div>
 							</div>
 						</div>
