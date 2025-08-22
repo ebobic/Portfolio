@@ -42,29 +42,29 @@ export function Footer() {
 				</div>
 
 				{/* Info section */}
-				<div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 text-sm text-neutral-800 dark:text-neutral-400 mb-8">
+				<div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 text-sm text-black dark:text-neutral-400 mb-8">
 					<span className="font-medium">© 2025 Emil Bobić</span>
-					<span className="hidden md:inline text-neutral-600">•</span>
+					<span className="hidden md:inline text-neutral-600 dark:text-neutral-500">•</span>
 					<span>Frontend Developer & QA Engineer</span>
-					<span className="hidden md:inline text-neutral-600">•</span>
+					<span className="hidden md:inline text-neutral-600 dark:text-neutral-500">•</span>
 					<span>Built with Next.js & Tailwind CSS</span>
 				</div>
 
 				{/* Navigation links */}
 				<div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
-					<Link href="/" className="text-neutral-800 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors duration-200 font-medium">
+					<Link href="/" className="text-black dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-white transition-colors duration-200 font-medium">
 						Home
 					</Link>
-					<span className="hidden md:inline text-neutral-600">•</span>
-					<Link href="/#about" className="text-neutral-800 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors duration-200 font-medium">
+					<span className="hidden md:inline text-neutral-600 dark:text-neutral-500">•</span>
+					<Link href="/#about" className="text-black dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-white transition-colors duration-200 font-medium">
 						About
 					</Link>
-					<span className="hidden md:inline text-neutral-600">•</span>
-					<Link href="/projects" className="text-neutral-800 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors duration-200 font-medium">
+					<span className="hidden md:inline text-neutral-600 dark:text-neutral-500">•</span>
+					<Link href="/projects" className="text-black dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-white transition-colors duration-200 font-medium">
 						Projects
 					</Link>
-					<span className="hidden md:inline text-neutral-600">•</span>
-					<Link href="/#contact" className="text-neutral-800 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors duration-200 font-medium">
+					<span className="hidden md:inline text-neutral-600 dark:text-neutral-500">•</span>
+					<Link href="/#contact" className="text-black dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-white transition-colors duration-200 font-medium">
 						Contact
 					</Link>
 				</div>

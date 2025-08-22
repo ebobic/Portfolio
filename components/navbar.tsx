@@ -34,6 +34,7 @@ export function Navbar() {
 		return (
 			<nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-white/95 backdrop-blur-sm border border-neutral-200/30 rounded-3xl shadow-xl shadow-black/10 px-4 py-2">
 				<div className="flex items-center gap-6">
+					{/* Desktop Navigation */}
 					<div className="hidden md:flex items-center gap-6">
 						<div className="text-lg text-black font-medium px-3 py-1">About</div>
 						<div className="w-px h-5 bg-neutral-400/60"></div>
@@ -41,7 +42,20 @@ export function Navbar() {
 						<div className="w-px h-5 bg-neutral-400/60"></div>
 						<div className="text-lg text-black font-medium px-3 py-1">Contact</div>
 						<div className="w-px h-5 bg-neutral-400/60"></div>
-						<div className="text-black p-1 rounded-lg">🌙</div>
+						<div className="text-black p-1 rounded-lg">
+							<Moon className="h-4 w-4" fill="currentColor" />
+						</div>
+					</div>
+					
+					{/* Mobile Navigation */}
+					<div className="md:hidden flex items-center gap-4">
+						<div className="text-black p-2 rounded-lg">
+							<Moon className="h-5 w-5" fill="currentColor" />
+						</div>
+						<div className="w-px h-6 bg-neutral-400/60"></div>
+						<div className="text-black p-2 rounded-lg">
+							<Menu className="h-5 w-5" />
+						</div>
 					</div>
 				</div>
 			</nav>
