@@ -1,12 +1,12 @@
 'use client'
-import Link from 'next/link'
+
 
 export default function ProjectsPage() {
 	return (
-		<div className="min-h-screen w-full bg-[#f8fafc] relative">
-			{/* Top Fade Grid Background */}
+		<div className="min-h-screen w-full bg-[#f8fafc] dark:bg-black relative">
+			{/* Light Mode Fade Grid Background */}
 			<div
-				className="absolute inset-0 z-0"
+				className="absolute inset-0 z-0 dark:hidden"
 				style={{
 					backgroundImage: `
 						linear-gradient(to right, #e2e8f0 1px, transparent 1px),
@@ -14,9 +14,36 @@ export default function ProjectsPage() {
 					`,
 					backgroundSize: "20px 30px",
 					WebkitMaskImage:
-						"linear-gradient(to bottom, #000 0%, transparent 30%)",
+						"radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)",
 					maskImage:
-						"linear-gradient(to bottom, #000 0%, transparent 30%)",
+						"radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)",
+				}}
+			/>
+			
+			{/* Dark Mode Fade Grid Background */}
+			<div
+				className="absolute inset-0 z-0 hidden dark:block opacity-60"
+				style={{
+					backgroundImage: `
+						linear-gradient(to right, #1f2937 1px, transparent 1px),
+						linear-gradient(to bottom, #1f2937 1px, transparent 1px)
+					`,
+					backgroundSize: "20px 30px",
+					WebkitMaskImage:
+						"radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)",
+					maskImage:
+						"radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)",
+				}}
+			/>
+			
+			{/* Dark Mode White Radial Light Under Navbar */}
+			<div
+				className="absolute top-0 left-1/2 transform -translate-x-1/2 z-0 hidden dark:block"
+				style={{
+					width: '800px',
+					height: '400px',
+					background: 'radial-gradient(ellipse 800px 400px at center top, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 40%, transparent 60%)',
+					pointerEvents: 'none',
 				}}
 			/>
 			
@@ -24,22 +51,34 @@ export default function ProjectsPage() {
 			<div className="relative z-10">
 				<div className="max-w-6xl mx-auto bg-transparent">
 					{/* Projects Section */}
-					<section className="min-h-[70vh] flex items-center justify-center relative pt-20">
-						<div className="mx-auto max-w-2xl px-4 md:px-8">
-							<div className="bg-white/90 backdrop-blur-2xl border border-neutral-300/30 rounded-2xl shadow-2xl shadow-black/10 px-6 py-8">
-								<h1 className="mb-4 text-center text-3xl md:text-4xl font-bold text-black">Projects</h1>
-								<p className="mx-auto mb-8 max-w-2xl text-center text-black">
-									Coming soon! I&apos;m working on some exciting projects that I&apos;ll be sharing here.
-								</p>
-								<div className="text-center">
-									<Link
-										href="/"
-										className="inline-flex items-center gap-2 rounded-lg bg-black px-6 py-3 text-white hover:bg-neutral-800 transition-all duration-200 shadow-lg hover:shadow-xl"
-									>
-										Back to Home
-									</Link>
-								</div>
-							</div>
+					<section className="min-h-screen flex items-center justify-center relative pt-20">
+						<div className="mx-auto max-w-4xl px-4 md:px-8">
+							<pre className="text-xs sm:text-sm md:text-base lg:text-lg font-mono text-green-500 dark:text-green-400 leading-relaxed whitespace-pre-wrap break-words">
+{`// projects.ts
+class ProjectsPage {
+  private status = "UNDER_DEVELOPMENT";
+  private eta = "COMING_SOON";
+
+  async initialize(): Promise<string> {
+    console.log("🚧 Under construction...");
+    
+    // TODO: Add projects here
+    
+    return new Promise<string>(resolve => 
+      setTimeout(() => resolve("PROJECTS_READY"), 999999)
+    );
+  }
+}
+
+new ProjectsPage().initialize()
+  .then(status => console.log("✅", status))
+  .catch(error => console.log("🐛", error));
+
+/*
+ *  STATUS: UNDER_DEVELOPMENT
+ *  ETA: COMING_SOON
+ */`}
+							</pre>
 						</div>
 					</section>
 				</div>

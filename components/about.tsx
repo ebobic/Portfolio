@@ -1,53 +1,76 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export function About() {
+	// About section med foto, bio text och skills grid
 	return (
-		<section id="about" className="relative flex min-h-[70vh] items-center justify-center py-20">
+		<section
+			id="about"
+			className="relative flex min-h-[70vh] items-center justify-center py-20"
+			aria-labelledby="about-heading"
+		>
 			<motion.div
 				initial={{ opacity: 0, y: 50, scale: 0.95 }}
 				animate={{ opacity: 1, y: 0, scale: 1 }}
 				transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
 				className="w-full"
 			>
-				<div className="mx-auto max-w-2xl px-4 md:px-8 text-center">
-					<h2 className="mb-8 text-3xl md:text-4xl font-bold text-black">About me</h2>
-					
-					{/* Main About Text */}
-					<div className="space-y-4 text-lg md:text-xl text-black mb-8 max-w-3xl mx-auto text-left">
-						<p>
-							I&apos;m <strong>Emil</strong>, a <strong>frontend development</strong> student with a background in <strong>Quality Assurance</strong>, which has given me a strong eye for detail and an understanding of how to build products that are not only functional, but also reliable and enjoyable to use.
-						</p>
-						<p> 
-							Right now, I&apos;m studying and sharpening my skills in <strong>React</strong>, <strong>TypeScript</strong>, <strong>Next.js</strong>, and <strong>WCAG standards</strong>. I&apos;m passionate about clean design, <strong>accessibility</strong>, and <strong>performance</strong>, and I enjoy the process of turning ideas into inclusive, user-friendly web applications. My <strong>QA experience</strong> helps me approach development with a focus on quality, functionality, and user experience.
-						</p>
+				<div className="mx-auto max-w-4xl px-4 md:px-8">
+										<h2 id="about-heading" className="mb-8 text-3xl md:text-4xl font-bold text-black text-center">About me</h2>
+
+					{/* Foto och bio text layout */}
+					<div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-8">
+						{/* Profilfoto */}
+						<div className="flex-shrink-0">
+							<div className="w-48 h-60 md:w-80 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+								<Image 
+									src="/emiil.png" 
+									alt="Emil Bobić - Professional portrait in a casual setting" 
+									width={320}
+									height={384}
+									className="w-full h-full object-cover object-center contrast-110 dark:grayscale dark:contrast-125"
+									placeholder="blur"
+									blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+								/>
+							</div>
+						</div>
+						
+												{/* Bio text */}
+						<div className="space-y-4 md:space-y-6 text-base md:text-lg lg:text-xl text-black max-w-2xl px-4 md:px-0">
+							<p className="leading-relaxed md:leading-relaxed">
+								I&apos;m <strong>Emil</strong>, a <strong>frontend development</strong> student based in <strong>Stockholm</strong> with a background in <strong>Quality Assurance</strong>. That experience has given me a sharp eye for detail and a mindset that values building things that just work — reliable, accessible, and enjoyable.
+							</p>
+							<p className="leading-relaxed md:leading-relaxed">
+								These days, I&apos;m diving into <strong>React</strong>, <strong>TypeScript</strong>, <strong>Next.js</strong>, and <strong>WCAG standards</strong>. I get excited about clean, simple design and love turning ideas into web applications that people actually enjoy using. <strong>Accessibility</strong> and <strong>performance</strong> matter a lot to me, and my <strong>QA background</strong> helps me keep quality and user experience at the center of everything I build.
+							</p>
+						</div>
 					</div>
 					
 					{/* Skills Section */}
-					<div className="space-y-8">
+					<div className="space-y-6 md:space-y-8 px-4 md:px-0">
 						{/* Tech Stack */}
 						<div>
 							
 							{/* Programming Languages */}
 							<div className="mb-6">
-								<h4 className="text-lg font-medium text-black mb-4 text-left">Programming Languages</h4>
-								<div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-									{/* TypeScript */}
-									<div className="flex items-center gap-2 bg-cyan-900/20 px-3 py-2 rounded-lg hover:bg-cyan-900/30 transition-colors">
-										<svg className="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+								<h4 className="text-base md:text-lg font-medium text-black mb-3 md:mb-4 text-left">Programming Languages</h4>
+								<div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
+									<div className="flex items-center gap-2 bg-cyan-900/20 px-2 md:px-3 py-2 rounded-lg hover:bg-cyan-900/30 transition-colors">
+										<svg className="w-4 h-4 md:w-5 md:h-5 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
 											<path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/>
 										</svg>
-										<span className="font-medium text-black">TypeScript</span>
+										<span className="text-sm md:text-base font-medium text-black">TypeScript</span>
 									</div>
 									
-									{/* JavaScript */}
 									<div className="flex items-center gap-2 bg-cyan-900/20 px-3 py-2 rounded-lg hover:bg-cyan-900/30 transition-colors">
-										<img src="/jsicon.svg" alt="JavaScript" className="w-5 h-5" />
+										<svg className="w-5 h-5 text-yellow-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+											<path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/>
+										</svg>
 										<span className="font-medium text-black">JavaScript</span>
 									</div>
 									
-									{/* HTML */}
 									<div className="flex items-center gap-2 bg-cyan-900/20 px-3 py-2 rounded-lg hover:bg-cyan-900/30 transition-colors">
 										<svg className="w-5 h-5 text-orange-600" viewBox="0 0 24 24" fill="currentColor">
 											<path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/>
@@ -55,21 +78,18 @@ export function About() {
 										<span className="font-medium text-black">HTML</span>
 									</div>
 									
-									{/* CSS */}
 									<div className="flex items-center gap-2 bg-cyan-900/20 px-3 py-2 rounded-lg hover:bg-cyan-900/30 transition-colors">
-										<svg className="w-5 h-5 text-blue-500" viewBox="0 0 48 48" fill="currentColor">
-											<path d="m3.84 0.48 3.675 42.3381L23.9759 47.52l16.5091 -4.7093L44.16 0.48H3.84Zm21.518 2L12 12.713 2.482 5h19.036zM2 19V7.183l10 8.104 10-8.104V19H2z"/>
+										<svg className="w-5 h-5 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
+											<path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/>
 										</svg>
 										<span className="font-medium text-black">CSS</span>
 									</div>
 								</div>
 							</div>
 							
-							{/* Frameworks & Libraries */}
 							<div className="mb-6">
-								<h4 className="text-lg font-medium text-black mb-4 text-left">Frameworks & Libraries</h4>
-								<div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-									{/* React */}
+								<h4 className="text-base md:text-lg font-medium text-black mb-3 md:mb-4 text-left">Frameworks & Libraries</h4>
+								<div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
 									<div className="flex items-center gap-2 bg-cyan-900/20 px-3 py-2 rounded-lg hover:bg-cyan-900/30 transition-colors">
 										<svg className="w-5 h-5 text-blue-500" viewBox="0 0 32 32" fill="currentColor">
 											<path d="M18.6789 15.9759C18.6789 14.5415 17.4796 13.3785 16 13.3785C14.5206 13.3785 13.3211 14.5415 13.3211 15.9759C13.3211 17.4105 14.5206 18.5734 16 18.5734C17.4796 18.5734 18.6789 17.4105 18.6789 15.9759Z"/>
@@ -78,7 +98,6 @@ export function About() {
 										<span className="font-medium text-black">React</span>
 									</div>
 									
-									{/* Next.js */}
 									<div className="flex items-center gap-2 bg-cyan-900/20 px-3 py-2 rounded-lg hover:bg-cyan-900/30 transition-colors">
 										<svg className="w-5 h-5 text-gray-800" viewBox="0 0 256 256" fill="currentColor">
 											<path d="M119.616813,0.0688905149 C119.066276,0.118932037 117.314565,0.294077364 115.738025,0.419181169 C79.3775171,3.69690087 45.3192571,23.3131775 23.7481916,53.4631946 C11.7364614,70.2271045 4.05395894,89.2428829 1.15112414,109.384595 C0.12512219,116.415429 0,118.492153 0,128.025062 C0,137.557972 0.12512219,139.634696 1.15112414,146.665529 C8.10791789,194.730411 42.3163245,235.11392 88.7116325,250.076335 C97.0197458,252.753556 105.778299,254.580072 115.738025,255.680985 C119.616813,256.106338 136.383187,256.106338 140.261975,255.680985 C157.453763,253.779407 172.017986,249.525878 186.382014,242.194795 C188.584164,241.068861 189.00958,240.768612 188.709286,240.518404 C188.509091,240.36828 179.124927,227.782837 167.86393,212.570214 L147.393939,184.922273 L121.743891,146.965779 C107.630108,126.098464 96.0187683,109.034305 95.9186706,109.034305 C95.8185728,109.009284 95.7184751,125.873277 95.6684262,146.465363 C95.5933529,182.52028 95.5683284,183.971484 95.1178886,184.82219 C94.4672532,186.048207 93.9667644,186.548623 92.915738,187.099079 C92.114956,187.499411 91.4142717,187.574474 87.6355816,187.574474 L83.3063539,187.574474 L82.1552297,186.848872 C81.4044966,186.373477 80.8539589,185.747958 80.4785924,185.022356 L79.9530792,183.896422 L80.0031281,133.729796 L80.0782014,83.5381493 L80.8539589,82.5623397 C81.25435,82.0369037 82.1051808,81.3613431 82.7057674,81.0360732 C83.7317693,80.535658 84.1321603,80.4856165 88.4613881,80.4856165 C93.5663734,80.4856165 94.4172043,80.6857826 95.7434995,82.1369867 C96.1188661,82.5373189 110.007429,103.454675 126.623656,128.650581 C143.239883,153.846488 165.962072,188.250034 177.122972,205.139048 L197.392766,235.839522 L198.418768,235.163961 C207.502639,229.259062 217.112023,220.852086 224.719453,212.09482 C240.910264,193.504394 251.345455,170.835585 254.848876,146.665529 C255.874878,139.634696 256,137.557972 256,128.025062 C256,118.492153 255.874878,116.415429 254.848876,109.384595 C247.892082,61.3197135 213.683675,20.9362052 167.288368,5.97379012 C159.105376,3.32158945 150.396872,1.49507389 140.637341,0.394160408 C138.234995,0.143952798 121.693842,-0.131275573 119.616813,0.0688905149 L119.616813,0.0688905149 Z M172.017986,77.4831252 C173.219159,78.0836234 174.195112,79.2345784 174.545455,80.435575 C174.74565,81.0861148 174.795699,94.9976579 174.74565,126.348671 L174.670577,171.336 L166.73783,159.17591 L158.780059,147.01582 L158.780059,114.313685 C158.780059,93.1711423 158.880156,81.2862808 159.030303,80.7108033 C159.430694,79.3096407 160.306549,78.2087272 161.507722,77.5581875 C162.533724,77.0327515 162.909091,76.98271 166.837928,76.98271 C170.541544,76.98271 171.19218,77.0327515 172.017986,77.4831252 Z"/>
@@ -86,7 +105,6 @@ export function About() {
 										<span className="font-medium text-black">Next.js</span>
 									</div>
 									
-									{/* Tailwind CSS */}
 									<div className="flex items-center gap-2 bg-cyan-900/20 px-3 py-2 rounded-lg hover:bg-cyan-900/30 transition-colors">
 										<svg className="w-5 h-5 text-cyan-500" viewBox="0 0 24 24" fill="currentColor">
 											<path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/>
@@ -98,8 +116,8 @@ export function About() {
 							
 							{/* Tools & Platforms */}
 							<div className="mb-6">
-								<h4 className="text-lg font-medium text-black mb-4 text-left">Tools & Platforms</h4>
-								<div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+								<h4 className="text-base md:text-lg font-medium text-black mb-3 md:mb-4 text-left">Tools & Platforms</h4>
+								<div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
 									{/* VSCode */}
 									<div className="flex items-center gap-2 bg-cyan-900/20 px-3 py-2 rounded-lg hover:bg-cyan-900/30 transition-colors">
 										<svg className="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
