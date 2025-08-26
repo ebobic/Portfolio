@@ -43,20 +43,22 @@ export function Hero() {
 					initial={{ opacity: 0, y: 30, scale: 0.9 }}
 					animate={{ opacity: 1, y: 0, scale: 1 }}
 					transition={{ duration: 1.0, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.4 }}
-					className="mb-6 text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black"
+					className="mb-4 text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black dark:text-white"
 				>
 					Hi, I&apos;m{' '}
-					<span className="text-black">
+					<span 
+						className="text-black dark:!text-white"
+						style={{ color: 'var(--tw-text-opacity, 1)' }}
+					>
 						Emil Bobić
 					</span>
 				</motion.h1>
 
-				{/* Professionell titel */}
 				<motion.p
 					initial={{ opacity: 0, y: 25, scale: 0.95 }}
 					animate={{ opacity: 1, y: 0, scale: 1 }}
 					transition={{ delay: 0.6, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-					className="mb-6 text-xl md:text-2xl lg:text-3xl text-black font-medium"
+					className="mb-6 text-lg md:text-2xl lg:text-3xl text-black dark:text-white font-medium max-w-xs md:max-w-none mx-auto md:mx-0"
 				>
 					Frontend Developer & QA Engineer.
 				</motion.p>
@@ -70,7 +72,7 @@ export function Hero() {
 				>
 					<motion.a 
 						href="mailto:ebobic95@gmail.com" 
-						className="inline-block rounded-full bg-white hover:bg-cyan-400 px-8 py-4 text-lg font-medium text-black transition-all duration-300 border-2 border-neutral-300/50 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
+						className="inline-block rounded-full bg-white hover:bg-cyan-400 px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-medium text-black transition-all duration-300 border-2 border-neutral-300/50 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
 						whileHover={{ 
 							scale: 1.05, 
 							boxShadow: "0 15px 35px rgba(0, 0, 0, 0.3)",
