@@ -84,13 +84,9 @@
 
 
 
-/* Make Emil Bobić name cyan gradient in dark mode */
+/* Make Emil Bobić name white in dark mode */
 .dark .text-black span {
-  background: linear-gradient(135deg, #67e8f9, #22d3ee, #06b6d4, #22d3ee, #67e8f9) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  filter: brightness(1.1) contrast(1.05) !important;
+  color: #ffffff !important;
 }
 
 /* Make "Let's have a chat" button text black in dark mode */
