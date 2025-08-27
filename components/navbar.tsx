@@ -62,11 +62,11 @@ export function Navbar() {
 		)
 	}
 
-	// Dynamic styling based on theme
-	const navbarBgClass = theme === 'dark' ? 'bg-black/95' : 'bg-white/95'
-	const textColorClass = theme === 'dark' ? 'text-white' : 'text-black'
-	const borderColorClass = theme === 'dark' ? 'border-neutral-700/30' : 'border-neutral-200/30'
-	const shadowClass = theme === 'dark' ? 'shadow-xl shadow-black/20' : 'shadow-xl shadow-black/10'
+	// Use CSS classes instead of dynamic theme detection
+	const navbarBgClass = 'bg-white/95 dark:bg-black/95'
+	const textColorClass = 'text-black dark:text-white'
+	const borderColorClass = 'border-neutral-200/30 dark:border-neutral-700/30'
+	const shadowClass = 'shadow-xl shadow-black/10 dark:shadow-black/20'
 
 	return (
 		<>
@@ -112,10 +112,7 @@ export function Navbar() {
 			{/* Mobile Hamburger Menu - Top Left */}
 			<button 
 				onClick={() => setIsMenuOpen(!isMenuOpen)} 
-				className={`md:hidden fixed top-6 left-6 z-50 ${textColorClass} font-medium p-3 rounded-xl transition-all duration-300 ${theme === 'dark' ? 'hover:bg-white/10' : 'hover:bg-black/5'} ${navbarBgClass} backdrop-blur-sm border ${borderColorClass} ${shadowClass}`}
-				style={{
-					backgroundColor: theme === 'dark' ? 'rgba(0, 0, 0, 0.95)' : 'rgba(255, 255, 255, 0.95)'
-				}}
+				className={`md:hidden fixed top-6 left-6 z-50 ${textColorClass} font-medium p-3 rounded-xl transition-all duration-300 hover:bg-black/5 dark:hover:bg-white/10 ${navbarBgClass} backdrop-blur-sm border ${borderColorClass} ${shadowClass}`}
 				aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
 				aria-expanded={isMenuOpen}
 				aria-controls="mobile-menu"
@@ -126,10 +123,7 @@ export function Navbar() {
 			{/* Mobile Theme Toggle - Top Right */}
 			<button 
 				onClick={toggleTheme} 
-				className={`md:hidden fixed top-6 right-6 z-50 ${textColorClass} font-medium p-3 rounded-xl transition-all duration-300 ${theme === 'dark' ? 'hover:bg-white/10' : 'hover:bg-black/5'} ${navbarBgClass} backdrop-blur-sm border ${borderColorClass} ${shadowClass}`}
-				style={{
-					backgroundColor: theme === 'dark' ? 'rgba(0, 0, 0, 0.95)' : 'rgba(255, 255, 255, 0.95)'
-				}}
+				className={`md:hidden fixed top-6 right-6 z-50 ${textColorClass} font-medium p-3 rounded-xl transition-all duration-300 hover:bg-black/5 dark:hover:bg-white/10 ${navbarBgClass} backdrop-blur-sm border ${borderColorClass} ${shadowClass}`}
 				aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
 			>
 				{theme === 'dark' ? <Sun className="h-5 w-5" aria-hidden="true" /> : <Moon className="h-5 w-5" fill="currentColor" aria-hidden="true" />}
